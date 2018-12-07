@@ -52,13 +52,22 @@
 	    height: 500px;
 	    width: 100%;
 	  }
+	  .menu2 .navbar-brand{
+	  	display: none;
+	  }
+
 	}
 
-	@media screen and ( max-width: 360px ) {
+	@media screen and ( max-width: 400px ) {
 	  .carousel-cell img {
 	    height: 200px;
 	    width: 100%;
 	  }
+
+	  .menu2 .navbar-brand{
+	  	display: block;
+	  }
+
 	}
 
 	.menu li{
@@ -111,10 +120,44 @@
 	}
 
 	.flickity-prev-next-button.previous {
-    left: 0px !important;
+    	left: 0px !important;
 	}
 
 	.flickity-prev-next-button.next {
-    right: 0px !important;
+    	right: 0px !important;
+	}
+
+	.menu li{
+		padding-right: 100px;
+	}
+	.menu1{
+		background-color: #3598db !important;
+	}
+
+	.block{
+	  width: 100%;
+	  height: 100%;
+	  position: relative;
+	  overflow: hidden;
+	  font-size: 16px;
+	}
+	.block h2{
+	  position: relative;
+	  display: block;
+	  text-align: center;
+	  margin: 0;
+	  top: 50%;
+	  transform: translateY(-50%);
+	  font-size: 10vw;
+	  color: white;
+	  font-weight: 400;
+	}
+	.img-parallax {
+	  z-index: -1;
+	  /*position: absolute;*/
+	  top: 0;
+	  left: 50%;
+	  transform: translate(-50%,0);
+	  pointer-events: none
 	}
 </style>
