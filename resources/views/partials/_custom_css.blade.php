@@ -129,6 +129,7 @@
 
 	.menu li{
 		padding-right: 100px;
+		padding-left: 100px;
 	}
 	.menu1{
 		background-color: #3598db !important;
