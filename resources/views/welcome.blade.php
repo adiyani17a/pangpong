@@ -5,14 +5,25 @@
 
 @yield('extra_style')
   <body style="background-image: url('{{ asset('assets/image/batik.jpg') }}');background-repeat: no-repeat;
-    background-size: cover;">
+    background-size: cover;" >
     <div class="se-pre-con" ></div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light menu1">
       <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="{{ asset('assets/image/Bangkalan.png') }}" width="100" height="100" alt="">
-        </a>
-
+        <div class="row">
+          <div class="col-sm-4">
+            <a class="navbar-brand" href="#">
+              <img src="{{ asset('assets/image/Bangkalan.png') }}" width="100" height="100" alt="">
+            </a>
+          </div>
+          <div class="col-sm-8 text-light" >
+            <div style="padding-top: 10px">
+              <h6><b>Desa Pangpong</b></h6>
+              <h6 style="font-size: 16px"><b>Kecamatan Labang</b></h6>
+              <h6 style="font-size: 14px"><b>Kabupaten Bangkalan</b></h6>
+              <p style="font-size: 12px;">Jln. bla bla bla bla</p>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
     <nav class="navbar navbar-expand-lg navbar-light bg-light menu2">
@@ -91,27 +102,27 @@
                   
                 </div>
                 @php
-                $tes = 15;
+                $tes = 4;
                 @endphp
                 @for($d = 0; $d < $tes ;$d++)
                   <article class="news-body clearfix">
                     <div class="thumb" style="background-image: url('{{ asset('assets/image/gapura.jpg') }}') ">
-                      <a href="https://wccftech.com/todays-list-of-paid-games-that-are-free-at-the-play-store-including-hexasmash-pro-and-more/"><img width="240" height="135" src="{{ asset('assets/image/gapura.jpg') }}" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 240px) 100vw, 240px"></a>
+                      <a href="#"><img width="240" height="135" src="{{ asset('assets/image/gapura.jpg') }}" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 240px) 100vw, 240px"></a>
                     </div>
                     
                     <div class="thumb-text">
                       <h5>
-                        <a href="https://wccftech.com/todays-list-of-paid-games-that-are-free-at-the-play-store-including-hexasmash-pro-and-more/">Today’s List of Paid Games That Are Free at the Play Store Including Hexasmash Pro and More
+                        <a href="#">Today’s List of Paid Games That Are Free at the Play Store Including Hexasmash Pro and More
                         </a>
                       </h5>
                       <div class="meta">
-                        <a href="https://wccftech.com/author/anil/" title="Posts by Anil Ganti" rel="author">Anil Ganti</a>&nbsp;•&nbsp; 2 hours ago
+                        <a href="#" title="Posts by Anil Ganti" rel="author">Anil Ganti</a>&nbsp;•&nbsp; 2 hours ago
                         </div>
                     </div>
 
                   </article>
                 @endfor
-                <div class="col-sm-12 text-center">
+                <div class="col-sm-12 text-center" style="padding-bottom: 20px">
                   <button class="btn btn-primary">Lihat Lainnya</button>
                 </div>
               </div>
@@ -221,8 +232,10 @@
           </div>
         </div>
         <div class="col-md-12" style="height: 300px;">
-          <div style="background-color: blue;width: 100%;height: 100% ">
-              
+          <div style="background-color: #f5f8fa;width: 100%;height: 100% ">
+            {{-- <div id="peta" style="height:300px;width:500px;">
+              </div>
+            </td> --}}
           </div>
         </div>
       </div>

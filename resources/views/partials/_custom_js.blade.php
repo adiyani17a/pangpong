@@ -1,4 +1,10 @@
+{{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZIIbiXz86geUPI3R-XnREIOGjHxL_vMA&callback=initMap"> --}}
+ </script>
 <script type="text/javascript">
+	// window.onload = function(){
+	// 	pasangPeta();
+	// }
+
 	var $carousel = $('.carousel').flickity({
 	  imagesLoaded: true,
 	  percentPosition: false,
@@ -114,5 +120,13 @@
       @endif
       lastScrollTop = st;
   });
+
+ //  function pasangPeta() {
+	// 	// var	pilihan = {
+	// 	// 		zoom: 8,
+	// 	// 		center: new google.maps.LatLng(-7.2742175, 112.719087)
+	// 	// };
+	// 	// var map = new google.maps.Map(document.getElementById('peta'),pilihan);
+	// }			
 
 </script>
