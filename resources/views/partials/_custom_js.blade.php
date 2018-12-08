@@ -2,7 +2,22 @@
 	var $carousel = $('.carousel').flickity({
 	  imagesLoaded: true,
 	  percentPosition: false,
-	  autoPlay: true
+	  autoPlay: true,
+
+	});
+
+	var $perangkat = $('.perangkat').flickity({
+	  imagesLoaded: true,
+	  percentPosition: false,
+	  autoPlay: true,
+	  on: {
+	    ready: function() {
+	      console.log('Flickity is ready');
+	    },
+	    change: function( index ) {
+	      console.log( 'Slide changed to' + index );
+	    }
+	  }
 	});
 
 	var $imgs = $carousel.find('.carousel-cell img');
@@ -66,5 +81,38 @@
 	//     }
 	//   });
 	// });
+	var lastScrollTop = 0;
+	var currentPos = 0;
+  $(window).on('scroll', function() {
+      st = $(this).scrollTop();
+      console.log(st);
+      
+
+      if (st > 125) {
+      	$('.menu2').addClass('fixed-top');
+      	$('.carousel-container').css('margin-top',56);
+      	$('.carousel-container').css('margin-top',56);
+      }else{
+      	$('.menu2').removeClass('fixed-top');
+      	$('.carousel-container').css('margin-top',0);
+      }
+      @if($tes >= 15)
+      	if (st > 1790) {
+	      	$('.post-info').addClass('fixed-side');
+	      	// $('.post-info').addClass('after-post')
+	      }else{
+	      	// $('.post-info').removeClass('after-post')
+	      	$('.post-info').removeClass('fixed-side');
+	      }
+
+	      if($(window).scrollTop() + $(window).height() > $(document).height() - 800) {
+	      	$('.post-info').removeClass('fixed-side');
+	      	$('.pengumuman').css('margin-top',680);
+				}else{
+	      	$('.pengumuman').css('margin-top',0);
+				}
+      @endif
+      lastScrollTop = st;
+  });
 
 </script>
