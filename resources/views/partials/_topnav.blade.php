@@ -37,22 +37,30 @@
           <a class="nav-link" href="{{ url('/profil_desa') }}">Profil Desa</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Wilayah</a>
+          <a class="nav-link" href="{{ url('/wilayah') }}">Wilayah</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pemerintahan</a>
+          <a class="nav-link" href="{{ url('/pemerintahan') }}">Pemerintahan</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Berita Desa</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Layanan
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{{ url('/berita_desa_list') }}">Berita Desa</a>
+            <a class="dropdown-item" href="{{ url('/pengumuman_list') }}">Pengumuman</a>
+          </div>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Produk Unggulan
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Singpong</a>
-            <a class="dropdown-item" href="#">Nimpong</a>
-            <a class="dropdown-item" href="#">Nakpong</a>
+            <a class="dropdown-item" href="#">Singpong 
+              <img src="{{ asset('assets/image/Bangkalan.png') }}" width="30" height="30" alt="" style="float: right;">
+            </a>
+            <a class="dropdown-item" href="#">Nimpong <img src="{{ asset('assets/image/Bangkalan.png') }}" width="30" height="30" alt="" style="float: right;"></a>
+            <a class="dropdown-item" href="#">Nakpong <img src="{{ asset('assets/image/Bangkalan.png') }}" width="30" height="30" alt="" style="float: right;"></a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -60,14 +68,12 @@
             Galery
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Nak</a>
+            <a class="dropdown-item" href="#">FOTO  <div style="float: right;"><i class="fa fa-camera pull-right"></i></div></a>
+            <a class="dropdown-item" href="#">VIDEO <div style="float: right;"><i class="fa fa-play pull-right"></i></div></a>
           </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Kontak</a>
+          <a class="nav-link" href="{{ url('kontak') }}">Kontak</a>
         </li>
       </ul>
     </div>

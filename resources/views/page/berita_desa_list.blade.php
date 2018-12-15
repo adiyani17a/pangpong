@@ -1,16 +1,6 @@
 @extends('home')
 @section('main')
 <div class="row d-flex justify-content-center">
-  <div class="col-md-12 col-sm-12">
-    <div class="carousel shadow" data-flickity='{ "autoPlay": true }'>
-      <div class=" carousel-cell">
-        <img src="{{ asset('assets/image/gapura.jpg') }}" data-speed="1" class="img-parallax">
-      </div>
-      <div class=" carousel-cell">
-        <img src="{{ asset('assets/image/gapura.jpg') }}" data-speed="1" class="img-parallax">
-      </div>
-    </div>
-  </div>
   <div class="col-md-12 row">
     <div class="col-md-8 news-box nopad" style="background-color: #f5f8fa;min-height: 800px;overflow-y: auto;">
       <div class="col-md-12 row">
@@ -50,28 +40,6 @@
       <div class="col-md-12 row post-info" >
         <div class="news-feed col-md-12">
           <div class="news-head" style="width: 100%">
-            <span class="text-light judul"><b>PERANGKAT DESA</b></span>
-          </div>
-          <div class="news-side">
-            <div class="perangkat shadow" data-flickity='{ "autoPlay": true }'>
-              <div class=" carousel-cell cell-perangkat">
-                <img src="{{ asset('assets/image/avatar3.png') }}" data-speed="1">
-                <p>tes</p>
-              </div>
-              <div class=" carousel-cell cell-perangkat">
-                <img src="{{ asset('assets/image/avatar04.png') }}" data-speed="1">
-              </div>
-              <div class=" carousel-cell cell-perangkat">
-                <img src="{{ asset('assets/image/faces/face1.jpg') }}" data-speed="1">
-              </div>
-              <div class=" carousel-cell cell-perangkat">
-                <img src="{{ asset('assets/image/faces/face2.jpg') }}" data-speed="1">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="news-feed col-md-12">
-          <div class="news-head" style="width: 100%">
             <span class="text-light judul"><b>FOTO</b></span>
           </div>
           <div class="news-body">
@@ -101,22 +69,6 @@
                 <button class="btn btn-primary">Lihat Lainnya</button>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="news-feed pengumuman col-md-12">
-          <div class="news-head" style="width: 100%">
-            <span class="text-light judul"><b>PENGUMUMAN</b></span>
-          </div>
-          <p class="text-primary">Diupload pada tanggal 08 desember 2018</p>
-          <div class="news-body">
-            <table class="table">
-              @for($i = 0; $i<6 ;$i++)
-              <tr>
-                <td>{{ $i+1 }}</td>
-                <td><a href="">lorem ipsum</a></td>
-              </tr>
-              @endfor
-            </table>
           </div>
         </div>
         <div class="news-feed col-md-12">
