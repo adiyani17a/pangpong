@@ -1,23 +1,16 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+@include('partials._head')
+@include('partials._custom_css')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
-        </div>
+@yield('extra_style')
+  <body style="background-image: url('{{ asset('assets/image/batik.jpg') }}');background-repeat: no-repeat;
+    background-size: cover;" >
+    @include('partials._topnav')
+    <div class="container carousel-container" >
+      @yield('main')
     </div>
-</div>
-@endsection
+    @include('partials._script')
+    @include('partials._custom_js')
+  </body>
+</html>
