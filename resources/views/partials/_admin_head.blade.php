@@ -3,7 +3,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>YAYASAN DARUL ULUM</title>
+  <title>PANGPONG</title>
   <!-- plugin css for this page -->
   <link rel="stylesheet" href="{{asset('assets/node_modules/jquery-bar-rating/dist/themes/css-stars.css')}}">
   {{-- <link rel="stylesheet" href="{{asset('assets/node_modules/jquery-ui/jquery-ui.min.css')}}"> --}}
@@ -33,7 +33,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{{asset('assets/image/logo1.png')}}" />
+  <link rel="shortcut icon" href="{{asset('assets/image/Bangkalan.png')}}" />
   <!-- <link rel="stylesheet" type="text/css" href="{{asset('assets/css/data-table.min.css')}}"> -->
 
   <!-- <link rel="stylesheet" type="text/css" href="{{asset('assets/datepicker/css/bootstrap-datepicker3.min.css')}}"> -->
@@ -44,10 +44,12 @@
   <link rel="stylesheet" href="{{asset('assets/validetta/validetta.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/validetta/validetta.min.css')}}" />
   <link rel="stylesheet" href="{{asset('assets/node_modules/checkbox/css/style.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/node_modules/dropify-master/dist/css/dropify.min.css')}}">
 
   <!-- Lightgallery -->
 
   <link rel="stylesheet" type="text/css" href="{{asset('assets/lightgallery/css/lightgallery.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/node_modules/dist/summernote.css')}}">
 
 
 

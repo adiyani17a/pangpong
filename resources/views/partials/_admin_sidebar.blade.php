@@ -73,10 +73,6 @@
               <a class="nav-link " data-toggle="collapse" href="#setting" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Setting</span>
                 <span class="d-none">
-                  Setting Level Account
-                  Setting Account 
-                  Setting Hak Akses
-                  Setting Daftar Menu
                 </span>
                 <i class="menu-arrow"></i>
                 <i class="mdi mdi-settings menu-icon mdi-spin"></i>
@@ -85,9 +81,45 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item" > <a href="" class="nav-link">Home</a></li>
                 </ul>
-                </div>
+              </div>
             </li>
-          </ul>          
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('carousel') }}">
+                <span class="menu-title">Carousel</span>
+                <i class="mdi mdi-view-carousel menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('foto') }}">
+                <span class="menu-title">Upload Foto</span>
+                <i class="mdi mdi-camera menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('video') }}">
+                <span class="menu-title">Upload Video</span>
+                <i class="mdi mdi-video menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('berita') }}">
+                <span class="menu-title">Upload Berita</span>
+                <i class="mdi mdi mdi-newspaper menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('pengumuman') }}">
+                <span class="menu-title">Upload Pengumuman</span>
+                <i class="mdi mdi-notification-clear-all  menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('perangkat_desa') }}">
+                <span class="menu-title">Perangkat Desa</span>
+                <i class="mdi mdi-notification-clear-all  menu-icon"></i>
+              </a>
+            </li>
+          </ul>        
         </nav>
 
 

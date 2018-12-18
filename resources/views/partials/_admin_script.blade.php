@@ -64,6 +64,8 @@
 
   <script src="{{asset('assets/jp-list/js/jplist.bootstrap-pagination-bundle-custom.min.js')}}"></script>
   
+  <script src="{{asset('assets/node_modules/dropify-master/dist/js/dropify.min.js')}}"></script>
+  <script src="{{asset('assets/node_modules/dist/summernote.min.js')}}"></script>
 
 
 
