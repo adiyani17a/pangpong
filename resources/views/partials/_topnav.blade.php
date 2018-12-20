@@ -1,4 +1,4 @@
-<div class="se-pre-con" ></div>
+<div class="se-pre-con load" ></div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light menu1">
   <div class="container">
     <div class="row">

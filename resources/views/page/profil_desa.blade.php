@@ -1,9 +1,6 @@
 @extends('home')
 @section('main')
 <div class="row d-flex justify-content-center">
-  <div class="col-md-12 col-sm-12">
-    
-  </div>
   <div class="col-md-12 row">
     <div class="col-md-8 news-box nopad" style="background-color: #f5f8fa;min-height: 800px;overflow-y: auto;">
       <div class="col-md-12 row">

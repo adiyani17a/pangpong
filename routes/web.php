@@ -25,6 +25,7 @@ Route::get('/wilayah', 'pageController@wilayah')->name('wilayah');
 Route::get('/pemerintahan', 'pageController@pemerintahan')->name('pemerintahan');
 Route::get('/berita_desa', 'pageController@berita_desa')->name('berita_desa');
 Route::get('/berita_desa_list', 'pageController@berita_desa_list')->name('berita_desa_list');
+Route::get('/page_berita_desa_list', 'pageController@page_berita_desa_list')->name('page_berita_desa_list');
 Route::get('/pengumuman', 'pageController@pengumuman')->name('pengumuman');
 Route::get('/pengumuman_list', 'pageController@pengumuman_list')->name('pengumuman_list');
 Route::get('/kontak', 'pageController@kontak')->name('kontak');

@@ -109,6 +109,55 @@
 	// 	// 		center: new google.maps.LatLng(-7.2742175, 112.719087)
 	// 	// };
 	// 	// var map = new google.maps.Map(document.getElementById('peta'),pilihan);
-	// }			
+	// }	
+	$('.foto').click(function(){
+    var url = $(this).attr('src');
+    var index  = $(this).data('id');
+    $('.preview').attr('src',url);
+    $('.image_row').val(index);
+    $('#foto').modal('show');
+  });
+
+  function hov(param) {
+    if (param == 'L') {
+      $('.arrow-left').css('opacity',0.8);
+    }else{
+      $('.arrow-right').css('opacity',0.8);
+    }
+  }
+
+  function out(param) {
+    if (param == 'L') {
+      $('.arrow-left').css('opacity',0);
+    }else{
+      $('.arrow-right').css('opacity',0);
+    }
+  }
+
+  function act(param) {
+    if (param == 'prev') {
+      var index = $('.image_row').val();
+      var foto = $('.foto').eq(index*1-1);
+      console.log(index*1-1);
+      if (foto != null) {
+        var url = foto.attr('src');
+        $('.image_row').val(foto.data('id'));
+        $('.preview').attr('src',url);
+      }
+    }else{
+      var index = $('.image_row').val();
+      var foto = $('.foto').eq(index*1+1);
+      if (foto.length != 0) {
+        var url = foto.attr('src');
+        $('.image_row').val(foto.data('id'));
+        $('.preview').attr('src',url);
+      }else{
+        var foto = $('.foto').eq(0);
+        var url = foto.attr('src');
+        $('.image_row').val(0);
+        $('.preview').attr('src',url);
+      }
+    }
+  }	
 
 </script>

@@ -25,24 +25,22 @@
           <h4 class="card-title">Upload Berita</h4>
           
           <div class="col-md-12" style="margin-bottom: 30px;">
-
-			<form action="{{ url('save_berita') }}" method="post" enctype="multipart/form-data" style="width: 100%" id="save_berita">
-				<div class="col-md-12 col-sm-12 col-xs-12" align="right" style="margin-bottom: 15px;">
+      			<form action="{{ url('save_berita') }}" method="post" enctype="multipart/form-data" style="width: 100%" id="save_berita">
+      				<div class="col-md-12 col-sm-12 col-xs-12" align="right" style="margin-bottom: 15px;">
 		            <button type="submit" class="btn btn-info btn_modal"><i class="fa fa-plus"></i>&nbsp;&nbsp;Upload Berita</button>
-		        </div>
-		        <div class="form-group col-md-6 col-sm-6 col-xs-6">
-                  	<label for="judul">Cover</label>
-	            	<input type="file" class="dropify tes" name="foto" data-max-file-size="3M" data-default-file="">
-		        </div>
-				<div class="form-group col-md-12">
-                  <label for="judul">Judul</label>
-                  <input type="text" class="form-control judul" id="judul" name="judul" placeholder="judul" required="">
-                  <input type="hidden" class="form-control id" id="id" name="id" placeholder="id">
-                  {{ csrf_field() }}
-				  <textarea id="summernote" name="body" style="min-height: 500px;"></textarea>
-                </div>
-          		
-			</form>
+  		        </div>
+  		        <div class="form-group col-md-6 col-sm-6 col-xs-6">
+              	<label for="judul">Cover</label>
+	            	<input type="file" class="dropify tes" name="foto" data-max-file-size="10M" data-default-file="">
+  		        </div>
+      				<div class="form-group col-md-12">
+                <label for="judul">Judul</label>
+                <input type="text" class="form-control judul" id="judul" name="judul" placeholder="judul" required="">
+                <input type="hidden" class="form-control id" id="id" name="id" placeholder="id">
+                {{ csrf_field() }}
+      				  <textarea id="summernote" name="body" style="min-height: 500px;"></textarea>
+              </div>
+      			</form>
           </div>
           <div class="table-responsive">
       		<table class="table datatable table-bordered">
