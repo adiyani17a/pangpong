@@ -347,20 +347,38 @@ class adminController extends Controller
                             $c1 = '';
                             $d = '</div>';
 
-                            $b = '<button type="button" onclick="edit(\''.$data->id.'\',\''.$data->id.'\')" class="btn btn-info btn-lg" title="ubah"><label class="fa fa-pencil-alt"></label></button>';
+                            $b = '<button type="button" onclick="edit(\''.$data->id.'\',\''.$data->url.'\',\''.$data->judul.'\')" class="btn btn-info btn-lg" title="ubah"><label class="fa fa-pencil-alt"></label></button>';
 
 
                             $c = '<button type="button" onclick="hapus(\''.$data->id.'\')" class="btn btn-danger btn-lg" title="hapus"><label class="fa fa-trash"></label></button>';
 
                             return $a.$b.$c1.$c.$d;
                         })->addColumn('image', function ($data) {
-                            $thumb = url('/').'/'.$data->id;
-                            return '<button type="button" onclick="preview(\''.$data->id.'\')" class="btn btn-info btn-lg" title="hapus"><label class="fa fa-play"></label></button>';
-                            
+                            $thumb = url('/').'/'.$data->url;
+                            return '<img style="width:150px;height:170px;border-radius:0" class="img-fluid img-thumbnail" src="'.$thumb.'">'.'<div hidden class="body_'.$data->id.'">'.$data->body.'</div>';
+                        })->addColumn('urls', function ($data) {
+                            $thumb = url('/berita_desa').'?id='.$data->id;
+                            return '<a href="'.$thumb.'">'.$thumb.'</a>';
                         })
-                        ->rawColumns(['aksi','image'])
+                        ->rawColumns(['aksi','image','urls'])
                         ->addIndexColumn()
                         ->make(true);
+    }
+
+    public function edit_berita(Request $req)
+    {
+        $data = DB::table('berita')->where('id',$req->id)->first();
+
+        return Response::json(['data'=>$data]);
+    }
+
+    public function delete_berita(Request $req)
+    {   
+        $data = DB::table('berita')->where('id',$req->id)->first();
+
+        unlink($data->url);
+        $delete = DB::table('berita')->where('id',$req->id)->delete();
+        return redirect()->back();
     }
 
     public function pengumuman()
@@ -485,4 +503,135 @@ class adminController extends Controller
         $delete = DB::table('perangkat_desa')->where('id',$req->id)->delete();
         return redirect()->back();
     }
+
+    public function admin_profil_desa()
+    {
+        $desa = DB::table('profil_desa')->first();
+        return view('page.admin_profil_desa',compact('desa'));
+    }
+
+    public function save_profil_desa(Request $req)
+    {
+        DB::beginTransaction();
+       
+        if ($req->id == null) {
+            $id = DB::table('profil_desa')->max('id')+1;
+        }else{
+            $id = $req->id;
+        }
+
+        $cari = DB::table('profil_desa')
+                  ->where('id',$id)
+                  ->first();
+
+        if ($cari == null) {
+            $save = DB::table('profil_desa')
+                      ->insert([
+                        'id'            => $id,
+                        'body'          => $req->body,
+                        'created_at'    => carbon::now(),
+                        'created_by'    => Auth::user()->id,
+                        'updated_at'    => carbon::now(),
+                      ]);
+        }else{
+            $save = DB::table('profil_desa')
+                      ->where('id',$id)
+                      ->update([
+                        'body'          => $req->body,
+                        'created_at'    => carbon::now(),
+                        'updated_at'    => carbon::now(),
+                      ]);
+        }
+
+        DB::commit();
+        return redirect()->back();
+    }
+
+    public function admin_wilayah()
+    {
+        $wilayah = DB::table('wilayah')->first();
+        return view('page.admin_wilayah',compact('wilayah'));
+    }
+
+    public function save_wilayah(Request $req)
+    {
+        DB::beginTransaction();
+       
+        if ($req->id == null) {
+            $id = DB::table('wilayah')->max('id')+1;
+        }else{
+            $id = $req->id;
+        }
+
+        $cari = DB::table('wilayah')
+                  ->where('id',$id)
+                  ->first();
+
+        if ($cari == null) {
+            $save = DB::table('wilayah')
+                      ->insert([
+                        'id'            => $id,
+                        'body'          => $req->body,
+                        'created_at'    => carbon::now(),
+                        'created_by'    => Auth::user()->id,
+                        'updated_at'    => carbon::now(),
+                      ]);
+        }else{
+            $save = DB::table('wilayah')
+                      ->where('id',$id)
+                      ->update([
+                        'body'          => $req->body,
+                        'created_at'    => carbon::now(),
+                        'updated_at'    => carbon::now(),
+                      ]);
+        }
+
+        DB::commit();
+        return redirect()->back();
+    }
+
+    public function admin_pemerintah()
+    {
+        $pemerintah = DB::table('pemerintah')->first();
+        return view('page.admin_pemerintah',compact('pemerintah'));
+    }
+
+    public function save_pemerintah(Request $req)
+    {
+        DB::beginTransaction();
+       
+        if ($req->id == null) {
+            $id = DB::table('pemerintah')->max('id')+1;
+        }else{
+            $id = $req->id;
+        }
+
+        $cari = DB::table('pemerintah')
+                  ->where('id',$id)
+                  ->first();
+
+        if ($cari == null) {
+            $save = DB::table('pemerintah')
+                      ->insert([
+                        'id'            => $id,
+                        'body'          => $req->body,
+                        'created_at'    => carbon::now(),
+                        'created_by'    => Auth::user()->id,
+                        'updated_at'    => carbon::now(),
+                      ]);
+        }else{
+            $save = DB::table('pemerintah')
+                      ->where('id',$id)
+                      ->update([
+                        'body'          => $req->body,
+                        'created_at'    => carbon::now(),
+                        'updated_at'    => carbon::now(),
+                      ]);
+        }
+
+        DB::commit();
+        return redirect()->back();
+    }
+
+    
 }

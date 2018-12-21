@@ -15,7 +15,7 @@
 </style>
 <div class="row d-flex justify-content-center">
   <div class="col-md-12 row">
-    <div class="col-md-8 news-box nopad" style="background-color: #f5f8fa;min-height: 800px;overflow-y: auto;">
+    <div class="col-md-8 news-box nopad" style="background-color: #f5f8fa;min-height: 800px;">
       <div class="col-md-12 row">
         <div class="col-md-12">
           <div class="news-head" style="width: 100%">
@@ -24,12 +24,15 @@
           <div class="col-md-12">
             <h2><b>{{ $berita->judul }}</b></h2>
             <div class="col-md-12">
-                <p class="pull-right"><a  href="#" title="Posts by Anil {{ $berita->name }}" rel="author">{{ $berita->name }}</a>&nbsp;•&nbsp; {{ $berita->created_at }}</p>
+                <p class="pull-right"><a  href="#" title="Posts by Anil {{ $berita->name }}" rel="author">{{ $berita->name }}</a>&nbsp;•&nbsp; {{ $berita->tanggal }}</p>
             </div>
             <hr style="margin-top: 25px;">
           </div>
           <div class="col-md-12 badan-berita">
             {!! $berita->body !!}       
+          </div>
+          <div id="fb-root" style="margin-left: 8%">
+            <div class="fb-comments" data-href="{{ url('berita_desa') }}/{{ $berita->berita_id }}" data-numposts="100"></div>
           </div>
         </div>
       </div>
@@ -91,4 +94,14 @@
   </div>
 </div>
 @include('partials._footer') 
+<script>
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/id_ID/sdk.js#xfbml=1&version=v3.2';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
 @endsection

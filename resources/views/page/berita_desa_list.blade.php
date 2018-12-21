@@ -88,6 +88,7 @@
 </div>
 
 
+@include('partials._footer') 
 <script src="{{asset('assets/node_modules/jquery/dist/jquery.min.js')}}"></script>
 <script type="text/javascript">
   var page = 1;

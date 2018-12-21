@@ -6,6 +6,9 @@
 		width: 100% !important;
 		height: 100% !important;
 	}
+  .note-form-group{
+    display: none;
+  }
 </style>
 {{-- @include('master.staff.tambah') --}}
 <!-- partial -->
@@ -46,7 +49,7 @@
       		<table class="table datatable table-bordered">
       			<thead>
       				<th>Image</th>
-      				<th>Identitas</th>
+      				<th>Judul</th>
       				<th>Url</th>
       				<th>Aksi</th>
       			</thead>
@@ -109,15 +112,15 @@
               ],
         columns: [
           {data: 'image', name: 'image'},
-          {data: 'identitas', name: 'identitas'},
-          {data: 'url', name: 'url'},
+          {data: 'judul', name: 'judul'},
+          {data: 'urls', name: 'urls'},
           {data: 'aksi'}
         ]
 
   	});
 
 
-	function edit(id,url,nama,jabatan,keterangan) {
+	function edit(id,url,judul) {
 		var imagenUrl = url;
 		var drEvent = $('.dropify').dropify(
 		{
@@ -130,12 +133,22 @@
 		drEvent.destroy();
 		drEvent.init();
 
-
-		$('#id').val(id);
-		$('.nama').val(nama);
-		$('.jabatan').val(jabatan);
-		$('.keterangan').val(keterangan);
-		$('#foto').modal('show');
+    $.ajax({
+        url:'{{ route('edit_berita') }}',
+        type:'get',
+        data:{id},
+        dataType:'json',
+        success:function(data){
+          $('#id').val(id);
+          $('#summernote').summernote('destroy');
+          $("#summernote").summernote("code",String(data.data.body));
+          $('.judul').val(judul);
+          $('#foto').modal('show');
+        },
+        error:function(){
+          edit(id,url,judul);
+        } 
+    });
 	}
 
 	function hapus(id) {

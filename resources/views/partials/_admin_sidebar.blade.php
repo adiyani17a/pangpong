@@ -102,6 +102,24 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{{ url('admin_profil_desa') }}">
+                <span class="menu-title">Admin Profil Desa</span>
+                <i class="mdi mdi-user  menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('admin_wilayah') }}">
+                <span class="menu-title">Admin Wilayah</span>
+                <i class="mdi mdi-user  menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('admin_pemerintahan') }}">
+                <span class="menu-title">Admin Pemerintahan</span>
+                <i class="mdi mdi-user  menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{ url('berita') }}">
                 <span class="menu-title">Upload Berita</span>
                 <i class="mdi mdi mdi-newspaper menu-icon"></i>
