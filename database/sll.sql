@@ -23,11 +23,10 @@ CREATE TABLE IF NOT EXISTS `berita` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table pangpong.berita: ~0 rows (approximately)
+-- Dumping data for table pangpong.berita: ~1 rows (approximately)
 /*!40000 ALTER TABLE `berita` DISABLE KEYS */;
 REPLACE INTO `berita` (`id`, `judul`, `url`, `body`, `created_by`, `created_at`, `updated_at`) VALUES
-	(1, 'tes', 'storage/cover/cover_2_.JPG', '<p><img src="storage/foto/foto_1_.JPG" style="width: 1366px;"></p><p>asdsaaaaaaaaaaaaaaaaaaaa<span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">asdsaaaaaaaaaaaaaaaaaaaa</span></p>', 1, '2018-12-18 16:23:08', '2018-12-18 16:23:08'),
-	(2, 'tes', 'storage/cover/cover_2_.JPG', '<p><img src="storage/foto/foto_3_.JPG" style="width: 1461.72px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-size: 14.08px; font-weight: initial;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><span style="font-weight: initial; font-size: 14.08px;">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</span><br></p>', 1, '2018-12-18 16:37:16', '2018-12-18 16:37:16');
+	(1, 'Kegiatan KKN Pelatihan Minat dan Bakat SMP di Desa Pangpong', 'storage/cover/cover_1_.jpg', '<p><span style="font-family: &quot;Comic Sans MS&quot;;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodasdasd</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p><p><img src="storage/foto/foto_5_.jpg" style="width: 50%;"><span style="font-family: &quot;Comic Sans MS&quot;;"><br></span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p><p><img src="storage/foto/foto_4_.jpg" style="width: 50%;"><span style="font-family: &quot;Comic Sans MS&quot;;"><br></span></p>', 1, '2018-12-21 15:52:00', '2018-12-21 15:52:00');
 /*!40000 ALTER TABLE `berita` ENABLE KEYS */;
 
 -- Dumping structure for table pangpong.carousel
@@ -42,11 +41,11 @@ CREATE TABLE IF NOT EXISTS `carousel` (
 -- Dumping data for table pangpong.carousel: ~5 rows (approximately)
 /*!40000 ALTER TABLE `carousel` DISABLE KEYS */;
 REPLACE INTO `carousel` (`id`, `url`, `created_at`, `updated_at`) VALUES
-	(1, 'storage/carousel/carousel_1_.JPG', '2018-12-18 12:14:50', '2018-12-18 12:14:50'),
-	(2, 'storage/carousel/carousel_2_.JPG', '2018-12-18 12:14:51', '2018-12-18 12:14:51'),
-	(3, 'storage/carousel/carousel_3_.JPG', '2018-12-18 12:14:52', '2018-12-18 12:14:52'),
-	(4, 'storage/carousel/carousel_4_.JPG', '2018-12-18 12:14:52', '2018-12-18 12:14:52'),
-	(5, 'storage/carousel/carousel_5_.JPG', '2018-12-18 12:14:53', '2018-12-18 12:14:53');
+	(1, 'storage/carousel/carousel_1_.jpg', '2018-12-21 15:21:46', '2018-12-21 15:21:46'),
+	(2, 'storage/carousel/carousel_2_.jpg', '2018-12-21 15:21:46', '2018-12-21 15:21:46'),
+	(3, 'storage/carousel/carousel_3_.jpg', '2018-12-21 15:21:46', '2018-12-21 15:21:46'),
+	(4, 'storage/carousel/carousel_4_.jpg', '2018-12-21 15:21:46', '2018-12-21 15:21:46'),
+	(5, 'storage/carousel/carousel_5_.jpg', '2018-12-21 15:21:46', '2018-12-21 15:21:46');
 /*!40000 ALTER TABLE `carousel` ENABLE KEYS */;
 
 -- Dumping structure for table pangpong.foto
@@ -59,15 +58,14 @@ CREATE TABLE IF NOT EXISTS `foto` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table pangpong.foto: ~7 rows (approximately)
+-- Dumping data for table pangpong.foto: ~6 rows (approximately)
 /*!40000 ALTER TABLE `foto` DISABLE KEYS */;
 REPLACE INTO `foto` (`id`, `url`, `status`, `created_at`, `updated_at`) VALUES
-	(1, 'storage/foto/foto_1_.JPG', NULL, '2018-12-18 13:26:17', '2018-12-18 13:26:17'),
-	(2, 'storage/foto/foto_2_.JPG', NULL, '2018-12-18 13:26:29', '2018-12-18 13:26:29'),
-	(3, 'storage/foto/foto_3_.JPG', NULL, '2018-12-18 13:30:54', '2018-12-18 13:30:54'),
-	(4, 'storage/foto/foto_4_.JPG', NULL, '2018-12-18 13:31:02', '2018-12-18 13:31:02'),
-	(5, 'storage/foto/foto_5_.JPG', NULL, '2018-12-18 13:31:09', '2018-12-18 13:31:09'),
-	(6, 'storage/foto/foto_6_.JPG', NULL, '2018-12-18 13:31:15', '2018-12-18 13:31:15'),
+	(1, 'storage/foto/foto_1_.jpg', NULL, '2018-12-21 15:21:54', '2018-12-21 15:21:54'),
+	(2, 'storage/foto/foto_2_.jpg', NULL, '2018-12-21 15:22:00', '2018-12-21 15:22:00'),
+	(3, 'storage/foto/foto_3_.jpg', NULL, '2018-12-21 15:22:06', '2018-12-21 15:22:06'),
+	(4, 'storage/foto/foto_4_.jpg', NULL, '2018-12-21 15:22:13', '2018-12-21 15:22:13'),
+	(5, 'storage/foto/foto_5_.jpg', NULL, '2018-12-21 15:22:21', '2018-12-21 15:22:21'),
 	(7, 'storage/foto/foto_7_.png', NULL, '2018-12-18 13:34:53', '2018-12-18 13:34:53');
 /*!40000 ALTER TABLE `foto` ENABLE KEYS */;
 
@@ -113,9 +111,25 @@ CREATE TABLE IF NOT EXISTS `perangkat_desa` (
 -- Dumping data for table pangpong.perangkat_desa: ~2 rows (approximately)
 /*!40000 ALTER TABLE `perangkat_desa` DISABLE KEYS */;
 REPLACE INTO `perangkat_desa` (`id`, `nama`, `jabatan`, `keterangan`, `url`, `created_at`, `updated_at`) VALUES
-	(2, 'yani', 'bu desa', 'tes', 'storage/perangkat_desa/perangkat_desa_2_.JPG', '2018-12-18 15:04:50', '2018-12-18 15:04:50'),
-	(3, 'NANI', 'KLEBUN', 'TES', 'storage/perangkat_desa/perangkat_desa_3_.JPG', '2018-12-18 15:05:21', '2018-12-18 15:05:21');
+	(2, 'yani', 'bu desa', 'tes', 'storage/perangkat_desa/perangkat_desa_2_.png', '2018-12-18 15:04:50', '2018-12-21 15:24:00'),
+	(3, 'NANI', 'KLEBUN', 'TES', 'storage/perangkat_desa/perangkat_desa_3_.png', '2018-12-18 15:05:21', '2018-12-21 15:24:08');
 /*!40000 ALTER TABLE `perangkat_desa` ENABLE KEYS */;
+
+-- Dumping structure for table pangpong.profil_desa
+CREATE TABLE IF NOT EXISTS `profil_desa` (
+  `id` int(11) NOT NULL,
+  `body` longtext,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+-- Dumping data for table pangpong.profil_desa: ~1 rows (approximately)
+/*!40000 ALTER TABLE `profil_desa` DISABLE KEYS */;
+REPLACE INTO `profil_desa` (`id`, `body`, `created_by`, `created_at`, `updated_at`) VALUES
+	(1, '<p><img src="storage/foto/foto_7_.png" style="width: 50%;"></p><p><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px; font-weight: initial;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px; font-weight: initial;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px; font-weight: initial;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px; font-weight: initial;">Pangpong adalah sebuah desa</span></p><p><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa</span></p><p><span style="font-size: 14.08px;">&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa</span><span style="font-size: 14.08px;"><br></span><span style="font-size: 14.08px; font-weight: initial;"><br></span><br></p>', 1, '2018-12-21 16:10:43', '2018-12-21 16:10:43');
+/*!40000 ALTER TABLE `profil_desa` ENABLE KEYS */;
 
 -- Dumping structure for table pangpong.users
 CREATE TABLE IF NOT EXISTS `users` (
@@ -152,6 +166,22 @@ CREATE TABLE IF NOT EXISTS `video` (
 REPLACE INTO `video` (`id`, `url`, `status`, `created_at`, `updated_at`) VALUES
 	(1, 'storage/video/video_1_.mp4', NULL, '2018-12-18 15:33:32', '2018-12-18 15:33:32');
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
+
+-- Dumping structure for table pangpong.wilayah
+CREATE TABLE IF NOT EXISTS `wilayah` (
+  `id` int(11) NOT NULL,
+  `body` longtext,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+-- Dumping data for table pangpong.wilayah: ~1 rows (approximately)
+/*!40000 ALTER TABLE `wilayah` DISABLE KEYS */;
+REPLACE INTO `wilayah` (`id`, `body`, `created_by`, `created_at`, `updated_at`) VALUES
+	(1, '<p><img src="storage/foto/foto_7_.png" style="width: 50%;"></p><p><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px; font-weight: initial;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px; font-weight: initial;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px; font-weight: initial;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px; font-weight: initial;">Pangpong adalah sebuah desa</span></p><p><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa</span></p><p><span style="font-size: 14.08px;">&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa</span><span style="font-size: 14.08px;"><br></span><span style="font-size: 14.08px; font-weight: initial;"><br></span><br></p>', 1, '2018-12-21 16:29:11', '2018-12-21 16:29:11');
+/*!40000 ALTER TABLE `wilayah` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
