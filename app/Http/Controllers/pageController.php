@@ -27,7 +27,7 @@ class pageController extends Controller
     {
 
         $berita = DB::table('berita')->select('berita.*','name','berita.created_at as tanggal')->join('users','users.id','=','created_by')->take(3)->orderBy('berita.created_at','DESC')->get();
-        $pemerintahan = DB::table('wilayah')->first();
+        $pemerintahan = DB::table('pemerintah')->first();
         $foto = DB::table('foto')->take(9)->get();
         $perangkat = DB::table('perangkat_desa')->get();
         return view('page.pemerintahan',compact('pemerintahan','berita','foto','perangkat'));

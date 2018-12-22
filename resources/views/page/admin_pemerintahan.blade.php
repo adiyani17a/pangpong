@@ -34,7 +34,7 @@
               </div>
       
               <div class="form-group col-md-12">
-                <input type="hidden" class="form-control id" value="{{ $Pemerintahan->id }}" id="id" name="id" placeholder="id">
+                <input type="hidden" class="form-control id" value="{{ $pemerintahan->id }}" id="id" name="id" placeholder="id">
                 {{ csrf_field() }}
                 <textarea id="summernote" name="body" style="min-height: 500px;"></textarea>
               </div>
@@ -61,7 +61,7 @@
   });
   $(document).ready(function(){
     $('#summernote').summernote('destroy');
-    $("#summernote").summernote("code",'{!! $Pemerintahan->body !!}');
+    $("#summernote").summernote("code",'{!! $pemerintahan->body !!}');
   });
   
   

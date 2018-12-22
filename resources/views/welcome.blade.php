@@ -82,7 +82,7 @@
             </div>
           </div>
         </div>
-        <div class="news-feed pengumuman col-md-12">
+{{--         <div class="news-feed pengumuman col-md-12">
           <div class="news-head" style="width: 100%">
             <span class="text-light judul"><b>PENGUMUMAN</b></span>
           </div>
@@ -97,7 +97,7 @@
               @endfor
             </table>
           </div>
-        </div>
+        </div> --}}
         <div class="news-feed col-md-12">
           <div class="news-head" style="width: 100%">
             <span class="text-light judul"><b>Statistik</b></span>

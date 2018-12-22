@@ -28,10 +28,10 @@
 		          			{{ csrf_field() }}
 		          			<label>Carousel {{ $i+1 }}</label>
 		          			@if ($data != null)
-			          			<input type="file" class="dropify" name="foto[]" data-max-file-size="3M" data-default-file="{{ url('/') }}/{{ $data[$i]->url }}">
+			          			<input type="file" class="dropify" name="foto[]" data-max-file-size="6M" data-default-file="{{ url('/') }}/{{ $data[$i]->url }}">
 			          			<input type="hidden" value="{{ $data[$i]->id }}" name="id[]" >
 			          		@else
-			          			<input type="file" class="dropify" name="foto[]" data-max-file-size="3M" >
+			          			<input type="file" class="dropify" name="foto[]" data-max-file-size="6M" >
 			          			<input type="hidden" value="" name="id[]">
 		          			@endif
 			          	</div>

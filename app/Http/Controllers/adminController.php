@@ -590,13 +590,13 @@ class adminController extends Controller
         return redirect()->back();
     }
 
-    public function admin_pemerintah()
+    public function admin_pemerintahan()
     {
-        $pemerintah = DB::table('pemerintah')->first();
-        return view('page.admin_pemerintah',compact('pemerintah'));
+        $pemerintahan = DB::table('pemerintah')->first();
+        return view('page.admin_pemerintahan',compact('pemerintahan'));
     }
 
-    public function save_pemerintah(Request $req)
+    public function save_pemerintahan(Request $req)
     {
         DB::beginTransaction();
        
