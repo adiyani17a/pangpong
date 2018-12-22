@@ -120,6 +120,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="{{ url('potensi') }}">
+                <span class="menu-title">Upload Potensi</span>
+                <i class="mdi mdi-user  menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="{{ url('berita') }}">
                 <span class="menu-title">Upload Berita</span>
                 <i class="mdi mdi mdi-newspaper menu-icon"></i>

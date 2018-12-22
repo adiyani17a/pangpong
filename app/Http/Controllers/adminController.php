@@ -633,5 +633,120 @@ class adminController extends Controller
         return redirect()->back();
     }
 
-    
+    public function potensi()
+    {
+        return view('page.potensi');
+    }
+
+    public function save_potensi(Request $req)
+    {
+        DB::beginTransaction();
+       
+        if ($req->id == null) {
+            $id = DB::table('potensi')->max('id')+1;
+        }else{
+            $id = $req->id;
+        }
+        if (isset($req->foto)) {
+            $file = $req->file('foto');
+            $file_name = 'cover_'. $id .'_' . '.' . $file->getClientOriginalExtension();
+
+            if (!is_dir(storage_path('cover/'))) {
+                mkdir(storage_path('cover/'), 0777, true);
+            }
+
+            $original_path = storage_path('cover/');
+
+            Image::make($file)->save($original_path . $file_name);
+        }else{
+            $file_name = DB::table('potensi')
+                  ->where('id',$id)
+                  ->first()->url;
+
+            $file_name = str_replace('storage/cover/', '', $file_name);
+        }
+
+        $cari = DB::table('potensi')
+                  ->where('id',$id)
+                  ->first();
+
+        if ($cari == null) {
+            $save = DB::table('potensi')
+                      ->insert([
+                        'id'            => $id,
+                        'body'          => $req->body,
+                        'judul'          => $req->judul,
+                        'jenis'          => $req->jenis,
+                        'url'           => 'storage/cover/'.$file_name,
+                        'created_at'    => carbon::now(),
+                        'created_by'    => Auth::user()->id,
+                        'updated_at'    => carbon::now(),
+                      ]);
+        }else{
+            $save = DB::table('potensi')
+                      ->where('id',$id)
+                      ->update([
+                        'body'          => $req->body,
+                        'judul'          => $req->judul,
+                        'jenis'          => $req->jenis,
+                        'url'           => 'storage/cover/'.$file_name,
+                        'created_at'    => carbon::now(),
+                        'updated_at'    => carbon::now(),
+                      ]);
+        }
+
+        DB::commit();
+        return redirect()->back();
+    }
+
+    public function datatable_potensi()
+    {
+
+        $data = DB::table('potensi')->get();
+        $data = collect($data);
+        return Datatables::of($data)
+                        ->addColumn('aksi', function ($data) {
+                            $a = '<div class="btn-group">' ;
+                            $b = '';
+                            $c = '';
+                            $c1 = '';
+                            $d = '</div>';
+
+                            $b = '<button type="button" onclick="edit(\''.$data->id.'\',\''.$data->url.'\',\''.$data->judul.'\')" class="btn btn-info btn-lg" title="ubah"><label class="fa fa-pencil-alt"></label></button>';
+
+
+                            $c = '<button type="button" onclick="hapus(\''.$data->id.'\')" class="btn btn-danger btn-lg" title="hapus"><label class="fa fa-trash"></label></button>';
+
+                            return $a.$b.$c1.$c.$d;
+                        })->addColumn('image', function ($data) {
+                            $thumb = url('/').'/'.$data->url;
+                            return '<img style="width:150px;height:170px;border-radius:0" class="img-fluid img-thumbnail" src="'.$thumb.'">'.'<div hidden class="body_'.$data->id.'">'.$data->body.'</div>';
+                        })->addColumn('urls', function ($data) {
+                            if ($data->jenis == 'potensi_desa') {
+                                $thumb = url('/potensi_desa').'?id='.$data->id;
+                            }else{
+                                $thumb = url('/potensi_desa').'?id='.$data->id;
+                            }
+                            return '<a href="'.$thumb.'">'.$thumb.'</a>';
+                        })
+                        ->rawColumns(['aksi','image','urls'])
+                        ->addIndexColumn()
+                        ->make(true);
+    }
+
+    public function edit_potensi(Request $req)
+    {
+        $data = DB::table('potensi')->where('id',$req->id)->first();
+
+        return Response::json(['data'=>$data]);
+    }
+
+    public function delete_potensi(Request $req)
+    {   
+        $data = DB::table('potensi')->where('id',$req->id)->first();
+
+        unlink($data->url);
+        $delete = DB::table('potensi')->where('id',$req->id)->delete();
+        return redirect()->back();
+    }
 }

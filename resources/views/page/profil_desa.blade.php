@@ -48,7 +48,7 @@
                 @endif
               @endfor
               <div class="col-sm-12 text-center">
-                <a href="{{ url('/foto') }}"><button class="btn btn-primary">Lihat Lainnya</button></a>
+                <a href="{{ url('/page_foto') }}"><button class="btn btn-primary">Lihat Lainnya</button></a>
               </div>
             </div>
           </div>
