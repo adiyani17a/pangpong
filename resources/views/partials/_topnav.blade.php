@@ -12,7 +12,7 @@
           <h6><b>Desa Pangpong</b></h6>
           <h6 style="font-size: 16px"><b>Kecamatan Labang</b></h6>
           <h6 style="font-size: 14px"><b>Kabupaten Bangkalan</b></h6>
-          <p style="font-size: 12px;">Jln. bla bla bla bla</p>
+          <p style="font-size: 12px;">Dekat rest area suramadu</p>
         </div>
       </div>
     </div>
