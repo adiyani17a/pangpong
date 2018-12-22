@@ -1,4 +1,4 @@
-<div class="se-pre-con" ></div>
+<div class="se-pre-con load" ></div>
 <nav class="navbar navbar-expand-lg navbar-light bg-light menu1">
   <div class="container">
     <div class="row">
@@ -53,14 +53,11 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Produk Unggulan
+            Potensi Desa
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Singpong 
-              <img src="{{ asset('assets/image/Bangkalan.png') }}" width="30" height="30" alt="" style="float: right;">
-            </a>
-            <a class="dropdown-item" href="#">Nimpong <img src="{{ asset('assets/image/Bangkalan.png') }}" width="30" height="30" alt="" style="float: right;"></a>
-            <a class="dropdown-item" href="#">Nakpong <img src="{{ asset('assets/image/Bangkalan.png') }}" width="30" height="30" alt="" style="float: right;"></a>
+            <a class="dropdown-item" href="#">Potensi</a>
+            <a class="dropdown-item" href="#">Produk Unggulan</a>
           </div>
         </li>
         <li class="nav-item dropdown">

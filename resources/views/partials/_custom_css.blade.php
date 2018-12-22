@@ -266,4 +266,52 @@
 		width: 27%;
 	}
 
+	.arrow-left{
+    position: absolute;
+    top: 45%;
+    left: 4% ;
+    opacity: 0;
+    background-color: grey;
+    padding: 10px;
+    z-index: 1;
+    -webkit-transition: opacity 0.5s; /* Safari */
+    transition: opacity 0.5s;
+  }
+
+  .arrow-right{
+    position: absolute;
+    top: 45%;
+    right: 4% ;
+    opacity: 0;
+    background-color: grey;
+    padding: 10px;
+    z-index: 1;
+    -webkit-transition: opacity 0.5s; /* Safari */
+    transition: opacity 0.5s;
+  }
+
+  .left-side{
+    width: 50%;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    background-color: grey;
+    cursor: pointer;
+    z-index: 2
+  }
+
+  .right-side{
+    width: 50%;
+    position: absolute;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    opacity: 0;
+    background-color: grey;
+    cursor: pointer;
+    z-index: 2
+  }
+
 </style>

@@ -1,5 +1,15 @@
 @extends('home')
 @section('main')
+<style type="text/css">
+  .spin{
+    min-height:500px;
+    max-height:500px;
+    text-align: center;
+    padding-top: 200px;
+    font-size: 50px;
+    color: #3598db;
+  }
+</style>
 <div class="row d-flex justify-content-center">
   <div class="col-md-12 row">
     <div class="col-md-8 news-box nopad" style="background-color: #f5f8fa;min-height: 800px;overflow-y: auto;">
@@ -7,31 +17,12 @@
         <div class="news-feed col-md-12" style="">
           <div class="news-head" style="width: 100%">
             <span class="text-light judul"><b>Berita Desa</b></span>
-            
           </div>
           @php
           $tes = 4;
           @endphp
-          @for($d = 0; $d < $tes ;$d++)
-            <article class="news-body clearfix">
-              <div class="thumb" style="background-image: url('{{ asset('assets/image/gapura.jpg') }}') ">
-                <a href="#"><img width="240" height="135" src="{{ asset('assets/image/gapura.jpg') }}" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 240px) 100vw, 240px"></a>
-              </div>
-              
-              <div class="thumb-text">
-                <h5>
-                  <a href="#">Today’s List of Paid Games That Are Free at the Play Store Including Hexasmash Pro and More
-                  </a>
-                </h5>
-                <div class="meta">
-                  <a href="#" title="Posts by Anil Ganti" rel="author">Anil Ganti</a>&nbsp;•&nbsp; 2 hours ago
-                </div>
-              </div>
-
-            </article>
-          @endfor
-          <div class="col-sm-12 text-center" style="padding-bottom: 20px">
-            <button class="btn btn-primary">Lihat Lainnya</button>
+          <div class="news-append">
+            
           </div>
         </div>
       </div>
@@ -44,13 +35,15 @@
           </div>
           <div class="news-body">
             <div class="row">
-              @for($i = 0; $i<6 ;$i++)
-                <div class="col-sm-4" style="padding: 10px">
-                  <img style="width: 100%" src="{{ asset('assets/image/Bangkalan.png') }}" data-speed="1">
-                </div>
+              @for($i = 0; $i<count($foto) ;$i++)
+                @if ($i <= 8 )
+                  <div class="col-sm-4" style="padding: 10px">
+                    <img data-id="{{ $i }}" class="foto" style="width: 100%;cursor: pointer;" src="{{ url('/') }}/{{ $foto[$i]->url }}">
+                  </div>
+                @endif
               @endfor
               <div class="col-sm-12 text-center">
-                <button class="btn btn-primary">Lihat Lainnya</button>
+                <a href="{{ url('/foto') }}"><button class="btn btn-primary">Lihat Lainnya</button></a>
               </div>
             </div>
           </div>
@@ -93,5 +86,102 @@
     </div>
   </div>
 </div>
+
+
 @include('partials._footer') 
+<script src="{{asset('assets/node_modules/jquery/dist/jquery.min.js')}}"></script>
+<script type="text/javascript">
+  var page = 1;
+  $(document).ready(function(){
+    appendNews();
+    $('.load').removeClass('se-pre-con');
+  });
+
+  $(document).on('click','.direct',function(){
+    page = $(this).text();
+    appendNews();
+  });
+
+  $(document).on('click','.next',function(){
+    page = page*1 + 1;
+    appendNews();
+  });
+
+  $(document).on('click','.previous',function(){
+    page = page*1 - 1;
+
+    appendNews();
+  });
+  function appendNews() {
+    var loading = '<div class="col-md-12 spin">'+
+                  '<i class="fa fa-circle-o-notch fa-spin"></i>'+
+                  '</div>';
+    $('.news-append').html(loading);
+    $.ajax({
+        url:'{{ route('page_berita_desa_list') }}?page='+page,
+        type:'get',
+        success:function(data){
+          $('.news-append').html(data);
+          $('.page-link').not(':last').not(':eq(0)').addClass('direct');
+          $('.page-link').eq(0).addClass('previous');
+          $('.page-link').last().addClass('next');
+          $('.page-link').removeAttr('href');
+        },
+        error:function(){
+          appendNews();
+        } 
+    });
+  }
+  
+  $('.foto').click(function(){
+    var url = $(this).attr('src');
+    var index  = $(this).data('id');
+    $('.preview').attr('src',url);
+    $('.image_row').val(index);
+    $('#foto').modal('show');
+  });
+
+  function hov(param) {
+    if (param == 'L') {
+      $('.arrow-left').css('opacity',0.8);
+    }else{
+      $('.arrow-right').css('opacity',0.8);
+    }
+  }
+
+  function out(param) {
+    if (param == 'L') {
+      $('.arrow-left').css('opacity',0);
+    }else{
+      $('.arrow-right').css('opacity',0);
+    }
+  }
+
+  function act(param) {
+    if (param == 'prev') {
+      var index = $('.image_row').val();
+      var foto = $('.foto').eq(index*1-1);
+      console.log(index*1-1);
+      if (foto != null) {
+        var url = foto.attr('src');
+        $('.image_row').val(foto.data('id'));
+        $('.preview').attr('src',url);
+      }
+    }else{
+      var index = $('.image_row').val();
+      var foto = $('.foto').eq(index*1+1);
+      if (foto.length != 0) {
+        var url = foto.attr('src');
+        $('.image_row').val(foto.data('id'));
+        $('.preview').attr('src',url);
+      }else{
+        var foto = $('.foto').eq(0);
+        var url = foto.attr('src');
+        $('.image_row').val(0);
+        $('.preview').attr('src',url);
+      }
+    }
+  }
+
+</script>
 @endsection

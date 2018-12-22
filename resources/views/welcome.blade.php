@@ -1,14 +1,17 @@
 @extends('home')
 @section('main')
+<style type="text/css">
+  
+
+</style>
 <div class="row d-flex justify-content-center">
   <div class="col-md-12 col-sm-12">
     <div class="carousel shadow" data-flickity='{ "autoPlay": true }'>
-      <div class=" carousel-cell">
-        <img src="{{ asset('assets/image/gapura.jpg') }}" data-speed="1" class="img-parallax">
-      </div>
-      <div class=" carousel-cell">
-        <img src="{{ asset('assets/image/gapura.jpg') }}" data-speed="1" class="img-parallax">
-      </div>
+      @foreach ($data as $i => $d)
+        <div class=" carousel-cell">
+          <img src="{{ url('/') }}/{{ $d->url }}" data-speed="1" class="img-parallax">
+        </div>
+      @endforeach
     </div>
   </div>
   <div class="col-md-12 row">
@@ -20,28 +23,26 @@
             
           </div>
           @php
-          $tes = 4;
+          $tes = 5;
           @endphp
-          @for($d = 0; $d < $tes ;$d++)
+          @foreach ($berita as $i => $c)
             <article class="news-body clearfix">
-              <div class="thumb" style="background-image: url('{{ asset('assets/image/gapura.jpg') }}') ">
-                <a href="#"><img width="240" height="135" src="{{ asset('assets/image/gapura.jpg') }}" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 240px) 100vw, 240px"></a>
+              <div class="thumb" style="background-image: url('{{ url('/') }}/{{ $c->url }}') ">
+                <a href="{{ url('berita_desa') }}?id={{ $c->berita_id }}"><img width="240" height="135" src="{{ url('/') }}/{{ $c->url }}" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" sizes="(max-width: 240px) 100vw, 240px"></a>
               </div>
-              
               <div class="thumb-text">
                 <h5>
-                  <a href="#">Today’s List of Paid Games That Are Free at the Play Store Including Hexasmash Pro and More
+                  <a href="{{ url('berita_desa') }}?id={{ $c->berita_id }}">{{ $c->judul }}
                   </a>
                 </h5>
                 <div class="meta">
-                  <a href="#" title="Posts by Anil Ganti" rel="author">Anil Ganti</a>&nbsp;•&nbsp; 2 hours ago
+                  <a href="#" title="Posts by Anil Ganti" rel="author">{{ $c->name }}</a>&nbsp;•&nbsp; {{ $c->created_at }}
                 </div>
               </div>
-
             </article>
-          @endfor
+          @endforeach
           <div class="col-sm-12 text-center" style="padding-bottom: 20px">
-            <button class="btn btn-primary">Lihat Lainnya</button>
+            <a href="{{ url('berita_desa_list') }}"><button class="btn btn-primary">Lihat Lainnya</button></a>
           </div>
         </div>
       </div>
@@ -54,19 +55,11 @@
           </div>
           <div class="news-side">
             <div class="perangkat shadow" data-flickity='{ "autoPlay": true }'>
-              <div class=" carousel-cell cell-perangkat">
-                <img src="{{ asset('assets/image/avatar3.png') }}" data-speed="1">
-                <p>tes</p>
-              </div>
-              <div class=" carousel-cell cell-perangkat">
-                <img src="{{ asset('assets/image/avatar04.png') }}" data-speed="1">
-              </div>
-              <div class=" carousel-cell cell-perangkat">
-                <img src="{{ asset('assets/image/faces/face1.jpg') }}" data-speed="1">
-              </div>
-              <div class=" carousel-cell cell-perangkat">
-                <img src="{{ asset('assets/image/faces/face2.jpg') }}" data-speed="1">
-              </div>
+              @foreach ($perangkat_desa as $i => $p)
+                <div class=" carousel-cell cell-perangkat">
+                  <img src="{{ url('/') }}/{{ $p->url }}" data-speed="1">
+                </div>
+              @endforeach
             </div>
           </div>
         </div>
@@ -76,34 +69,20 @@
           </div>
           <div class="news-body">
             <div class="row">
-              @for($i = 0; $i<6 ;$i++)
-                <div class="col-sm-4" style="padding: 10px">
-                  <img style="width: 100%" src="{{ asset('assets/image/Bangkalan.png') }}" data-speed="1">
-                </div>
+              @for($i = 0; $i<count($foto) ;$i++)
+                @if ($i <= 8 )
+                  <div class="col-sm-4" style="padding: 10px">
+                    <img data-id="{{ $i }}" class="foto" style="width: 100%;cursor: pointer;" src="{{ url('/') }}/{{ $foto[$i]->url }}">
+                  </div>
+                @endif
               @endfor
               <div class="col-sm-12 text-center">
-                <button class="btn btn-primary">Lihat Lainnya</button>
+                <a href="{{ url('/foto') }}"><button class="btn btn-primary">Lihat Lainnya</button></a>
               </div>
             </div>
           </div>
         </div>
-        <div class="news-feed video col-md-12">
-          <div class="news-head" style="width: 100%">
-            <span class="text-light judul"><b>VIDEO</b></span>
-          </div>
-          
-          <div class="news-body">
-            <div class="row">
-              <div class="col-sm-12" style="padding: 10px">
-                <img style="width: 100%" src="{{ asset('assets/image/Bangkalan.png') }}" data-speed="1">
-              </div>
-              <div class="col-sm-12 text-center">
-                <button class="btn btn-primary">Lihat Lainnya</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="news-feed pengumuman col-md-12">
+{{--         <div class="news-feed pengumuman col-md-12">
           <div class="news-head" style="width: 100%">
             <span class="text-light judul"><b>PENGUMUMAN</b></span>
           </div>
@@ -112,13 +91,13 @@
             <table class="table">
               @for($i = 0; $i<6 ;$i++)
               <tr>
-                <td>{{ $i+1 }}</td>
+                <td>{{ $i }}</td>
                 <td><a href="">lorem ipsum</a></td>
               </tr>
               @endfor
             </table>
           </div>
-        </div>
+        </div> --}}
         <div class="news-feed col-md-12">
           <div class="news-head" style="width: 100%">
             <span class="text-light judul"><b>Statistik</b></span>
@@ -141,5 +120,11 @@
     </div>
   </div>
 </div>
+
+<script src="{{asset('assets/node_modules/jquery/dist/jquery.min.js')}}"></script>
+<script type="text/javascript">
+  
+
+</script>
 @include('partials._footer') 
 @endsection
