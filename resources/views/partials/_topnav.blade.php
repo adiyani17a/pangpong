@@ -42,22 +42,16 @@
         <li class="nav-item">
           <a class="nav-link" href="{{ url('/pemerintahan') }}">Pemerintahan</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Layanan
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{ url('/berita_desa_list') }}">Berita Desa</a>
-            <a class="dropdown-item" href="{{ url('/pengumuman_list') }}">Pengumuman</a>
-          </div>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url('/berita_desa_list') }}">Berita Desa</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Potensi Desa
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Potensi</a>
-            <a class="dropdown-item" href="#">Produk Unggulan</a>
+            <a class="dropdown-item" href="{{ url('potensi_desa_list') }}">Potensi</a>
+            <a class="dropdown-item" href="{{ url('produk_unggulan_list') }}">Produk Unggulan</a>
           </div>
         </li>
         <li class="nav-item dropdown">
@@ -65,8 +59,8 @@
             Galery
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">FOTO  <div style="float: right;"><i class="fa fa-camera pull-right"></i></div></a>
-            <a class="dropdown-item" href="#">VIDEO <div style="float: right;"><i class="fa fa-play pull-right"></i></div></a>
+            <a class="dropdown-item" href="{{ url('page_foto') }}">FOTO  <div style="float: right;"><i class="fa fa-camera pull-right"></i></div></a>
+            <a class="dropdown-item" href="{{ url('page_video') }}">VIDEO <div style="float: right;"><i class="fa fa-play pull-right"></i></div></a>
           </div>
         </li>
         <li class="nav-item">

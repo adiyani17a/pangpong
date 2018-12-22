@@ -66,7 +66,8 @@ REPLACE INTO `foto` (`id`, `url`, `status`, `created_at`, `updated_at`) VALUES
 	(3, 'storage/foto/foto_3_.jpg', NULL, '2018-12-21 15:22:06', '2018-12-21 15:22:06'),
 	(4, 'storage/foto/foto_4_.jpg', NULL, '2018-12-21 15:22:13', '2018-12-21 15:22:13'),
 	(5, 'storage/foto/foto_5_.jpg', NULL, '2018-12-21 15:22:21', '2018-12-21 15:22:21'),
-	(7, 'storage/foto/foto_7_.png', NULL, '2018-12-18 13:34:53', '2018-12-18 13:34:53');
+	(7, 'storage/foto/foto_7_.png', NULL, '2018-12-18 13:34:53', '2018-12-18 13:34:53'),
+	(8, 'storage/foto/foto_8_.jpg', NULL, '2018-12-22 11:41:05', '2018-12-22 11:41:05');
 /*!40000 ALTER TABLE `foto` ENABLE KEYS */;
 
 -- Dumping structure for table pangpong.migrations
@@ -96,6 +97,22 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 /*!40000 ALTER TABLE `password_resets` DISABLE KEYS */;
 /*!40000 ALTER TABLE `password_resets` ENABLE KEYS */;
 
+-- Dumping structure for table pangpong.pemerintah
+CREATE TABLE IF NOT EXISTS `pemerintah` (
+  `id` int(11) NOT NULL,
+  `body` longtext,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+-- Dumping data for table pangpong.pemerintah: ~0 rows (approximately)
+/*!40000 ALTER TABLE `pemerintah` DISABLE KEYS */;
+REPLACE INTO `pemerintah` (`id`, `body`, `created_by`, `created_at`, `updated_at`) VALUES
+	(1, '<p><img src="storage/foto/foto_7_.png" style="width: 50%;"></p><p><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px; font-weight: initial;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px; font-weight: initial;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px; font-weight: initial;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px; font-weight: initial;">Pangpong adalah sebuah desafg</span></p><p><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa</span></p><p><span style="font-size: 14.08px;">&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa&nbsp;</span><span style="font-size: 14.08px;">Pangpong adalah sebuah desa</span><span style="font-size: 14.08px;"><br></span><span style="font-size: 14.08px; font-weight: initial;"><br></span><br></p>', 1, '2018-12-21 23:59:52', '2018-12-21 23:59:52');
+/*!40000 ALTER TABLE `pemerintah` ENABLE KEYS */;
+
 -- Dumping structure for table pangpong.perangkat_desa
 CREATE TABLE IF NOT EXISTS `perangkat_desa` (
   `id` int(11) NOT NULL,
@@ -114,6 +131,27 @@ REPLACE INTO `perangkat_desa` (`id`, `nama`, `jabatan`, `keterangan`, `url`, `cr
 	(2, 'yani', 'bu desa', 'tes', 'storage/perangkat_desa/perangkat_desa_2_.png', '2018-12-18 15:04:50', '2018-12-21 15:24:00'),
 	(3, 'NANI', 'KLEBUN', 'TES', 'storage/perangkat_desa/perangkat_desa_3_.png', '2018-12-18 15:05:21', '2018-12-21 15:24:08');
 /*!40000 ALTER TABLE `perangkat_desa` ENABLE KEYS */;
+
+-- Dumping structure for table pangpong.potensi
+CREATE TABLE IF NOT EXISTS `potensi` (
+  `id` int(11) NOT NULL,
+  `judul` varchar(100) DEFAULT NULL,
+  `jenis` varchar(100) DEFAULT NULL,
+  `url` varchar(100) DEFAULT NULL,
+  `body` longtext,
+  `created_by` int(11) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+-- Dumping data for table pangpong.potensi: ~1 rows (approximately)
+/*!40000 ALTER TABLE `potensi` DISABLE KEYS */;
+REPLACE INTO `potensi` (`id`, `judul`, `jenis`, `url`, `body`, `created_by`, `created_at`, `updated_at`) VALUES
+	(1, 'Kegiatan KKN Pelatihan Minat dan Bakat SMP di Desa Pangpong', NULL, 'storage/cover/cover_1_.jpg', '<p><span style="font-family: &quot;Comic Sans MS&quot;;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodasdasd</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p><p><img src="storage/foto/foto_5_.jpg" style="width: 50%;"><span style="font-family: &quot;Comic Sans MS&quot;;"><br></span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non</span></p><p><span style="font-family: &quot;Comic Sans MS&quot;;">proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p><p><img src="storage/foto/foto_4_.jpg" style="width: 50%;"><span style="font-family: &quot;Comic Sans MS&quot;;"><br></span></p>', 1, '2018-12-21 15:52:00', '2018-12-21 15:52:00'),
+	(2, 'SINGPONG', 'produk_unggulan', 'storage/cover/cover_2_.jpg', '<p><img src="storage/foto/foto_1_.jpg" style="width: 50%;"></p><p>Sinpong adalah produk baru yang dikembangkan oleh teman KKN UNTAG 2018 sebagai pengabdian dan&nbsp;</p>', 1, '2018-12-22 10:53:50', '2018-12-22 10:53:50'),
+	(3, 'KALIMENDEM', 'potensi_desa', 'storage/cover/cover_3_.jpg', '<p><img src="storage/foto/foto_8_.jpg" style="width: 1040px;"></p><p><br></p><p>TES DIMALAM HARI</p>', 1, '2018-12-22 11:41:23', '2018-12-22 11:41:23');
+/*!40000 ALTER TABLE `potensi` ENABLE KEYS */;
 
 -- Dumping structure for table pangpong.profil_desa
 CREATE TABLE IF NOT EXISTS `profil_desa` (
@@ -164,7 +202,12 @@ CREATE TABLE IF NOT EXISTS `video` (
 -- Dumping data for table pangpong.video: ~1 rows (approximately)
 /*!40000 ALTER TABLE `video` DISABLE KEYS */;
 REPLACE INTO `video` (`id`, `url`, `status`, `created_at`, `updated_at`) VALUES
-	(1, 'storage/video/video_1_.mp4', NULL, '2018-12-18 15:33:32', '2018-12-18 15:33:32');
+	(1, 'storage/video/video_1_.mp4', NULL, '2018-12-18 15:33:32', '2018-12-18 15:33:32'),
+	(2, 'storage/video/video_2_.mp4', NULL, '2018-12-22 12:02:59', '2018-12-22 12:02:59'),
+	(3, 'storage/video/video_2_.mp4', NULL, '2018-12-22 12:02:59', '2018-12-22 12:02:59'),
+	(4, 'storage/video/video_2_.mp4', NULL, '2018-12-22 12:02:59', '2018-12-22 12:02:59'),
+	(5, 'storage/video/video_2_.mp4', NULL, '2018-12-22 12:02:59', '2018-12-22 12:02:59'),
+	(6, 'storage/video/video_2_.mp4', NULL, '2018-12-22 12:02:59', '2018-12-22 12:02:59');
 /*!40000 ALTER TABLE `video` ENABLE KEYS */;
 
 -- Dumping structure for table pangpong.wilayah

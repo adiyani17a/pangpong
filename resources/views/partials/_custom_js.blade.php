@@ -160,4 +160,8 @@
     }
   }	
 
+  window.onload = function(){
+    $('.load').removeClass('se-pre-con');
+  }
+
 </script>

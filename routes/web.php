@@ -28,7 +28,17 @@ Route::get('/berita_desa_list', 'pageController@berita_desa_list')->name('berita
 Route::get('/page_berita_desa_list', 'pageController@page_berita_desa_list')->name('page_berita_desa_list');
 Route::get('/pengumuman', 'pageController@pengumuman')->name('pengumuman');
 Route::get('/pengumuman_list', 'pageController@pengumuman_list')->name('pengumuman_list');
+
+Route::get('/potensi_desa_list', 'pageController@potensi_desa_list')->name('potensi_desa_list');
+Route::get('/page_potensi_desa_list', 'pageController@page_potensi_desa_list')->name('page_potensi_desa_list');
+Route::get('/potensi_desa', 'pageController@potensi_desa')->name('potensi_desa');
+
+Route::get('/produk_unggulan_list', 'pageController@produk_unggulan_list')->name('produk_unggulan_list');
+Route::get('/page_produk_unggulan_list', 'pageController@page_produk_unggulan_list')->name('page_produk_unggulan_list');
+Route::get('/produk_unggulan', 'pageController@produk_unggulan')->name('produk_unggulan');
 Route::get('/kontak', 'pageController@kontak')->name('kontak');
+Route::get('page_foto', 'pageController@page_foto')->name('page_foto');
+Route::get('page_video', 'pageController@page_video')->name('page_video');
 
 Auth::routes();
 
@@ -50,7 +60,6 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('berita', 'adminController@berita')->name('berita');
 	Route::get('edit_berita', 'adminController@edit_berita')->name('edit_berita');
-
 	Route::get('datatable_berita', 'adminController@datatable_berita')->name('datatable_berita');
 	Route::post('save_berita', 'adminController@save_berita')->name('save_berita');
 	Route::post('delete_berita', 'adminController@delete_berita')->name('delete_berita');
@@ -69,6 +78,14 @@ Route::group(['middleware' => 'auth'], function () {
 
 	Route::get('admin_pemerintahan', 'adminController@admin_pemerintahan')->name('admin_pemerintahan');
 	Route::post('save_pemerintahan', 'adminController@save_pemerintahan')->name('save_pemerintahan');
+
+	Route::get('potensi', 'adminController@potensi')->name('potensi');
+	Route::get('edit_potensi', 'adminController@edit_potensi')->name('edit_potensi');
+	Route::get('datatable_potensi', 'adminController@datatable_potensi')->name('datatable_potensi');
+	Route::post('save_potensi', 'adminController@save_potensi')->name('save_potensi');
+	Route::post('delete_potensi', 'adminController@delete_potensi')->name('delete_potensi');
+
+
 
 });
 
