@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Schema;
-
+use DB;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -15,6 +15,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        $tes = DB::table('berita')->get();
+        dd($tes);
     }
 
     /**
