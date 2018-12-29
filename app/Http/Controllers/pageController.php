@@ -36,6 +36,7 @@ class pageController extends Controller
     public function berita_desa_list()
     {
         $data = DB::table('carousel')->get();
+        $berita = DB::table('berita')->selectRaw("name,berita.*,berita.id as berita_id,berita.created_at as tanggal")->join('users','users.id','=','created_by')->orderBy('berita.created_at','DESC')->paginate();
         $foto = DB::table('foto')->take(9)->get();
     	return view('page.berita_desa_list',compact('data','foto','perangkat_desa','berita'));
     }
@@ -68,12 +69,14 @@ class pageController extends Controller
         $data = DB::table('carousel')->get();
         $foto = DB::table('foto')->take(9)->get();
         $perangkat_desa = DB::table('perangkat_desa')->get();
+        $berita = DB::table('berita')->select('berita.*','name','berita.created_at as tanggal')->join('users','users.id','=','created_by')->take(3)->orderBy('berita.created_at','DESC')->get();
         return view('page.potensi_desa_list',compact('data','foto','perangkat_desa','berita'));
     }
 
 
     public function page_potensi_desa_list(Request $req)
     {
+        $berita = DB::table('berita')->select('berita.*','name','berita.created_at as tanggal')->join('users','users.id','=','created_by')->take(3)->orderBy('berita.created_at','DESC')->get();
         $potensi = DB::table('potensi')->selectRaw("name,potensi.*,potensi.id as potensi_id,potensi.created_at as tanggal")
                                       ->join('users','users.id','=','created_by')
                                       ->orderBy('potensi.created_at','DESC')
@@ -86,6 +89,7 @@ class pageController extends Controller
     public function produk_unggulan_list()
     {
         $data = DB::table('carousel')->get();
+        $berita = DB::table('berita')->select('berita.*','name','berita.created_at as tanggal')->join('users','users.id','=','created_by')->take(3)->orderBy('berita.created_at','DESC')->get();
         $foto = DB::table('foto')->take(9)->get();
         $perangkat_desa = DB::table('perangkat_desa')->get();
         return view('page.produk_unggulan_list',compact('data','foto','perangkat_desa','berita'));
@@ -104,6 +108,7 @@ class pageController extends Controller
 
     public function potensi_desa(Request $req)
     {
+        $berita = DB::table('berita')->select('berita.*','name','berita.created_at as tanggal')->join('users','users.id','=','created_by')->take(3)->orderBy('berita.created_at','DESC')->get();
         $potensi = DB::table('potensi')->selectRaw("name,potensi.*,potensi.id as potensi_id,potensi.created_at as tanggal")->join('users','users.id','=','created_by')->where('potensi.id',$req->id)->first();
         $foto = DB::table('foto')->take(9)->get();
         return view('page.potensi_desa',compact('potensi','foto'));
@@ -111,6 +116,7 @@ class pageController extends Controller
 
     public function produk_unggulan(Request $req)
     {
+        $berita = DB::table('berita')->select('berita.*','name','berita.created_at as tanggal')->join('users','users.id','=','created_by')->take(3)->orderBy('berita.created_at','DESC')->get();
         $potensi = DB::table('potensi')->selectRaw("name,potensi.*,potensi.id as potensi_id,potensi.created_at as tanggal")->join('users','users.id','=','created_by')->where('potensi.id',$req->id)->first();
         $foto = DB::table('foto')->take(9)->get();
         return view('page.produk_unggulan',compact('potensi','foto'));
@@ -118,7 +124,8 @@ class pageController extends Controller
 
     public function kontak()
     {
-    	return view('page.kontak');
+        $berita = DB::table('berita')->select('berita.*','name','berita.created_at as tanggal')->join('users','users.id','=','created_by')->take(3)->orderBy('berita.created_at','DESC')->get();
+    	return view('page.kontak',compact('berita'));
     }
 
     public function page_foto()

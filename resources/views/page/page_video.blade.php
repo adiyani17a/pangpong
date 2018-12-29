@@ -50,15 +50,15 @@
           </div>
           <div class="">
             <div class="row">
-              @for ($i = 0; $i < 3; $i++)
+              @for ($i = 0; $i < count($berita); $i++)
                 <div class="col-sm-4" style="padding: 10px" >
-                  <img style="width: 100%" src="{{ asset('assets/image/gapura.jpg') }}" data-speed="1" style="float: left;">
+                  <a href="{{ url('berita_desa') }}?id={{ $berita[$i]->id }}"><img style="width: 100%" src="{{ asset('/') }}/{{ $berita[$i]->url }}" data-speed="1" style="float: left;"></a>
                 </div>
                 <div class="col-sm-8" style="margin: auto;margin-top: 3%;">
                   <div class="meta" style="font-size: 10px;">
-                    <p style="text-decoration: none;color: grey;display: inline" href="#" title="Posts by Anil Ganti" rel="author">Anil Ganti</p>&nbsp;•&nbsp; 2 hours ago
+                    <p style="text-decoration: none;color: grey;display: inline" href="#" title="Posts by Anil Ganti" rel="author">{{ $berita[$i]->name }}</p>&nbsp;•&nbsp; {{ $berita[$i]->created_at }}
                   </div>
-                  <a style="font-size: 10px;" href="#">Pengesahan Gapura Baru</a>
+                  <a style="font-size: 10px;" href="{{ url('berita_desa') }}?id={{ $berita[$i]->id }}">{{ $berita[$i]->judul }}</a>
                 </div>
               @endfor
             </div>
